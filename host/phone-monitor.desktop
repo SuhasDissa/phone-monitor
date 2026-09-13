@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=Phone Monitor
+Comment=Use an Android phone as a low-latency USB secondary monitor
+Exec=phone-monitor
+Icon=smartphone
+Categories=Utility;
+StartupNotify=false

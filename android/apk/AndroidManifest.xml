@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.github.suhasdissa.phonemonitor"
+    android:versionCode="1"
+    android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="30" android:targetSdkVersion="34" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:label="Phone Monitor"
+        android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+        <!-- No LAUNCHER intent filter: the activity is only started by the host over adb. -->
+        <activity
+            android:name=".MonitorActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:excludeFromRecents="true"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode" />
+    </application>
+</manifest>

@@ -1,0 +1,4 @@
+android/out/
+host/kwin-cast/gen/
+host/kwin-cast/kwin-cast
+__pycache__/
