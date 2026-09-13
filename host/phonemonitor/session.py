@@ -200,10 +200,13 @@ class Session:
             self.volume_sync.stop()
         for s in (self.client, self.audio_client, self.srv, self.audio_srv):
             if s:
+                # close() alone doesn't wake a thread blocked in accept()/recv(); the socket
+                # would stay bound and the next start fails with "address already in use"
                 try:
-                    s.close()
+                    s.shutdown(socket.SHUT_RDWR)
                 except OSError:
                     pass
+                s.close()
         for p in (self.pipeline, self.audio_pipeline):
             if p:
                 p.set_state(Gst.State.NULL)
